@@ -1,0 +1,76 @@
+{
+  "manifest_version": "0.3",
+  "name": "meta-ads-readonly",
+  "display_name": "Meta Ads (Read-Only)",
+  "version": "1.0.0",
+  "description": "Safe read-only access to Meta Ads API for reporting, analysis, and monitoring. No create, update, or delete operations. Ideal for dashboards, performance reviews, and auditing.",
+  "long_description": "Connect Claude to the Meta Marketing API with safe, read-only access. Browse ad accounts, campaigns, ad sets, ads, and creatives. Analyze performance with insights and breakdowns (daily, weekly, monthly). Explore audiences, pixels, catalogs, lead forms, and automated rules — without any risk of modifying your ad setup.\n\nAll create, update, and delete operations are intentionally excluded.\n\nSetup:\n1. Go to developers.facebook.com — create an app if you don't have one (type: Business, takes 30 seconds)\n2. Open the Graph API Explorer: developers.facebook.com/tools/explorer\n3. Select your app, click 'Generate Access Token', and grant the ads_read permission (required). Optionally add pages_show_list for Page/Instagram tools, and business_management for product catalogs.\n4. Copy the token and paste it below\n\nNo Marketing API product setup or app review needed for reading your own ad accounts. Token is valid for ~60 days.",
+  "author": {
+    "name": "Sebastien Grosjean",
+    "url": "https://smily.com"
+  },
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/mcp-bundled.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/mcp-bundled.js"],
+      "env": {
+        "META_ACCESS_TOKEN": "${user_config.access_token}"
+      }
+    }
+  },
+  "user_config": {
+    "access_token": {
+      "type": "string",
+      "title": "Meta Access Token",
+      "description": "Get one at developers.facebook.com/tools/explorer — select your app, generate a token with ads_read (required), pages_show_list (recommended), and optionally business_management.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "tools": [
+    { "name": "meta_get_me", "description": "Get authenticated user" },
+    { "name": "meta_list_pages", "description": "List Facebook Pages" },
+    { "name": "meta_list_instagram_accounts", "description": "List Instagram accounts" },
+    { "name": "meta_list_permissions", "description": "List token permissions" },
+    { "name": "meta_debug_token", "description": "Debug access token" },
+    { "name": "ads_list_accounts", "description": "List ad accounts" },
+    { "name": "ads_get_account", "description": "Get ad account details" },
+    { "name": "ads_list_campaigns", "description": "List ad campaigns" },
+    { "name": "ads_get_campaign", "description": "Get campaign details" },
+    { "name": "ads_list_adsets", "description": "List ad sets" },
+    { "name": "ads_get_adset", "description": "Get ad set details" },
+    { "name": "ads_list_ads", "description": "List ads" },
+    { "name": "ads_get_ad", "description": "Get ad details" },
+    { "name": "ads_preview_ad", "description": "Preview ad placement" },
+    { "name": "ads_list_creatives", "description": "List ad creatives" },
+    { "name": "ads_get_creative", "description": "Get creative details" },
+    { "name": "ads_list_images", "description": "List ad images" },
+    { "name": "ads_list_audiences", "description": "List custom audiences" },
+    { "name": "ads_get_audience", "description": "Get audience details" },
+    { "name": "ads_list_saved_audiences", "description": "List saved audiences" },
+    { "name": "ads_account_insights", "description": "Account performance insights" },
+    { "name": "ads_campaign_insights", "description": "Campaign performance insights" },
+    { "name": "ads_adset_insights", "description": "Ad set performance insights" },
+    { "name": "ads_ad_insights", "description": "Ad performance insights" },
+    { "name": "ads_list_pixels", "description": "List tracking pixels" },
+    { "name": "ads_get_pixel", "description": "Get pixel details" },
+    { "name": "ads_list_catalogs", "description": "List product catalogs" },
+    { "name": "ads_get_catalog", "description": "Get catalog details" },
+    { "name": "ads_list_products", "description": "List catalog products" },
+    { "name": "ads_list_lead_forms", "description": "List lead gen forms" },
+    { "name": "ads_get_lead_form", "description": "Get lead form details" },
+    { "name": "ads_get_leads", "description": "Get captured leads" },
+    { "name": "ads_list_rules", "description": "List ad rules" },
+    { "name": "ads_get_rule", "description": "Get rule details" },
+    { "name": "ads_search_targeting", "description": "Search targeting options" },
+    { "name": "ads_reach_estimate", "description": "Estimate audience reach" }
+  ],
+  "keywords": ["meta", "facebook", "ads", "marketing", "analytics", "reporting", "read-only"],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"]
+  }
+}

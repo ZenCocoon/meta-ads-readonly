@@ -1,0 +1,43 @@
+{
+  "name": "@zencocoon/meta-ads-readonly",
+  "version": "1.0.0",
+  "description": "Meta Ads API read-only MCP server for reporting and analysis",
+  "license": "MIT",
+  "author": {
+    "name": "Sebastien Grosjean",
+    "url": "https://www.sebgrosjean.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZenCocoon/meta-ads-readonly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZenCocoon/meta-ads-readonly/issues"
+  },
+  "homepage": "https://github.com/ZenCocoon/meta-ads-readonly#readme",
+  "keywords": ["mcp", "meta", "facebook", "ads", "marketing", "analytics", "reporting", "read-only"],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "meta-ads-readonly": "./dist/mcp-bundled.js"
+  },
+  "files": [
+    "dist/mcp-bundled.js",
+    "manifest.json",
+    "icon.png"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc && npx esbuild dist/mcp.js --bundle --platform=node --target=node18 --format=cjs --outfile=dist/mcp-bundled.js",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/mcp-bundled.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "esbuild": "^0.25.0"
+  }
+}
