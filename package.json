@@ -1,5 +1,5 @@
 {
-  "name": "@zencocoon/meta-ads-readonly",
+  "name": "@sebgrosjean/meta-ads-readonly",
   "version": "1.0.0",
   "description": "Meta Ads API read-only MCP server for reporting and analysis",
   "license": "MIT",
