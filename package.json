@@ -1,6 +1,6 @@
 {
   "name": "@sebgrosjean/meta-ads-readonly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Meta Ads API read-only MCP server for reporting and analysis",
   "license": "MIT",
   "author": {
@@ -15,7 +15,16 @@
     "url": "https://github.com/ZenCocoon/meta-ads-readonly/issues"
   },
   "homepage": "https://github.com/ZenCocoon/meta-ads-readonly#readme",
-  "keywords": ["mcp", "meta", "facebook", "ads", "marketing", "analytics", "reporting", "read-only"],
+  "keywords": [
+    "mcp",
+    "meta",
+    "facebook",
+    "ads",
+    "marketing",
+    "analytics",
+    "reporting",
+    "read-only"
+  ],
   "engines": {
     "node": ">=18"
   },

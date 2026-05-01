@@ -20,7 +20,7 @@ import {
   formatJson,
 } from "./core";
 
-const SERVER_INFO = { name: "meta-ads-readonly", version: "1.0.0" };
+const SERVER_INFO = { name: "meta-ads-readonly", version: "1.0.1" };
 
 const TOOLS = [
   // ═══ ACCOUNT & DISCOVERY ═══
